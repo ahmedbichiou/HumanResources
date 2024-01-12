@@ -1,27 +1,46 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Login</title>
-  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css'>
 
-</head>
-<body>
+
 
 <div class="container">
-    <div id="login-box">
-      <div class="logo">
-        <h1 class="logo-caption"><span class="tweak">L</span>ogin</h1>
-      </div>
-      <div class="controls">
-        <input type="text" [(ngModel)]="username" name="username" placeholder="Username" class="form-control" />
-        <input type="password" [(ngModel)]="password" name="password" placeholder="Password" class="form-control" />
-        <button type="button" class="btn btn-default btn-block btn-custom" (click)="loginUser()">Login</button>
-      </div>
-      <div class="alert alert-danger" *ngIf="error">
-        <strong>Login failed. Check your credentials.</strong>
-      </div>
+  <div class="forms-container">
+    <div class="signin-signup">
+      <form action="" class="sign-in-form">
+        <h2 class="title">Sign In</h2>
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Username" [(ngModel)]="username" name="username" />
+        </div>
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Password" [(ngModel)]="password" name="password" />
+        </div>
+        
+        <button class="btn transparent2" id="sign-up-btn" (click)="loginUser()">Login</button>
+
+        <div class="empty" *ngIf="error">
+          
+            <strong>Login failed. Check your credentials.</strong>
+         
+        </div>
+      </form>
+
+      <form action="" class="sign-up-form">
+        <h2 class="title">Bonjour</h2>
+        <h2 class="title2"  name="welcome" >{{username}}</h2>
+        <button class="btn transparent2" id="sign-up-btn" (click)="Enter()">Decouvrir</button>
+      </form>
     </div>
   </div>
-</body>
-</html>
+  <div class="panels-container">
+    <div class="panel left-panel">
+      <div class="content"></div>
+      <img src="./assets/log.svg" class="image" alt="">
+    </div>
+    <div class="panel right-panel">
+      <div class="content">
+        <button class="btn transparent" id="sign-in-btn" (click)="toggleLogout()" >Deconnecter</button>
+      </div>
+      <img src="./assets/register.svg" class="image" alt="">
+    </div>
+  </div>
+</div>

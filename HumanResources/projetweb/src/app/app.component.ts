@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
@@ -6,21 +6,20 @@ import { Router, NavigationEnd } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'projetweb';
+export class AppComponent implements OnInit {
   isLoginPage: boolean = false;
-  
-  constructor(private router: Router) { 
-    this.router.events.subscribe(event => {
+
+  constructor(private router: Router) {}
+
+  ngOnInit() {
+    this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.isLoginPage = event.url === '/login';
+        this.isLoginPage = event.url === '/login' || event.url === '/'; // Adjust the routes accordingly
       }
     });
   }
 
   logout() {
-    // Perform logout logic here (e.g., clear session, navigate to login page)
-    // For simplicity, let's navigate to the login page
     this.router.navigateByUrl('/login');
   }
 }
