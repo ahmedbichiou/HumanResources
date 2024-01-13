@@ -1,29 +1,50 @@
-<nav class="navbar bg-body-tertiary mb-5" *ngIf="!isLoginPage">
-  <form class="container-fluid justify-content-center">
-    <button
-      class="btn btn-sm btn-outline-success me-2 mb-2"
-      type="button"
-      routerLinkActive="active"
-      routerLink="/employees-list"
-    >
-      View Employees
-    </button>
-    <button
-      class="btn btn-sm btn-outline-secondary me-2 mb-2"
-      type="button"
-      routerLinkActive="active"
-      routerLink="/create-employee"
-    >
-      Create Employee
-    </button>
-    <button
-      class="btn btn-sm btn-outline-danger mb-2"
-      type="button"
-      (click)="logout()"
-    >
-      Logout
-    </button>
-  </form>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Resources</title>
   
-</nav>
-<router-outlet></router-outlet>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+
+    <header *ngIf="!isLoginPage">
+
+        <div class="companyBar" >
+            <a  class="logo" routerLinkActive="active"
+            routerLink="/employees-list">Human Resrouces</a>
+
+            
+
+        </div>
+
+        <input type="checkbox" id="menu-bar">
+        <label for="menu-bar"><span id="menuicon" class="material-symbols-outlined"> menu</span></label>
+
+
+        <nav class="navbar">
+            <ul>
+
+                <li routerLinkActive="active"
+                routerLink="/create-employee"><a >Add Employees</a></li>
+                <li routerLinkActive="active"
+                routerLink="/employees-list"><a >Show Employees</a></li>
+                <li (click)="logout()" ><a >Logout</a></li>
+               
+
+            </ul>
+        </nav>
+
+
+    </header>
+
+ <router-outlet></router-outlet>
+    
+    
+</body>
+
+</html>

@@ -241,10 +241,8 @@ form.sign-in-form {
   font-weight: 600;
   font-size: 0.8rem;
   color: #4481eb;
-  text-align: center; /* Center align the text horizontally */
-
-  /* You can also use the following to center the text vertically */
-  line-height: 41px; /* Set it equal to the button's height */
+  text-align: center;
+  line-height: 41px; 
 }
 
 .right-panel .image,

@@ -5,7 +5,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-employee-create',
   templateUrl: './employee-create.component.html',
-  styleUrls: ['./employee-create.component.scss'],
+  styleUrls: ['./employee-create.component.css'],
 })
 export class EmployeeCreateComponent implements OnInit {
   submitted = false;
